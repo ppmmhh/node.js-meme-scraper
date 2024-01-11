@@ -16,5 +16,8 @@
   "devDependencies": {
     "eslint-config-upleveled": "^7.5.0",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.5"
   }
 }
