@@ -52,3 +52,4 @@ const scrapeImages = async (url) => {
     console.error(error);
   }
 };
+console.log(getDownloadedMemes(websiteUrlL));
