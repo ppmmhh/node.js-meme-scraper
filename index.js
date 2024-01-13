@@ -27,7 +27,7 @@ const getDownloadedMemes = async (url) => {
         const memeUrl = $(element).attr('src');
         downloadedMemes.push(memeUrl);
       });
-    
+
     // generating file names
     let fileName = 1;
     for (const memeUrl of downloadedMemes) {
