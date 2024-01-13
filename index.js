@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-// website URL, folder where images will be stored
+// website url, folder where images will be stored
 const websiteUrl = 'https://memegen-link-examples-upleveled.netlify.app/';
 const folderName = 'memes';
 
@@ -13,7 +13,6 @@ if (!fs.existsSync(folderName)) {
 }
 
 // function to scrape memes
-
 const getDownloadedMemes = async (url) => {
   try {
     const response = await axios.get(url);
@@ -28,19 +27,20 @@ const getDownloadedMemes = async (url) => {
         const memeUrl = $(element).attr('src');
         downloadedMemes.push(memeUrl);
       });
-    // Generate the file names
+    
+    // generating file names
     let fileName = 1;
     for (const memeUrl of downloadedMemes) {
       fileName = fileName < 10 ? '0' + fileName : fileName;
 
-      // Get Image with axios
+      // get memes with axios
       const imageResponse = await axios({
         method: 'get',
         url: memeUrl,
         responseType: 'stream',
       });
 
-      // Save image to file
+      // save memes to file
       imageResponse.data.pipe(fs.createWriteStream(`./memes/${fileName}.jpg`));
       fileName++;
     }
