@@ -49,4 +49,4 @@ const getDownloadedMemes = async (url) => {
     console.error(error);
   }
 };
-console.log(getDownloadedMemes(websiteUrlL));
+console.log(getDownloadedMemes(websiteUrl));

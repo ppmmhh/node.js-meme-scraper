@@ -6,9 +6,7 @@
   "license": "ISC",
   "author": "Pia Hölzl",
   "type": "module",
-  "main": "bin/index.js",
-  "bin": {
-    "tran": "./bin/index.js"
+  "main": "index.js",
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
