@@ -5,7 +5,7 @@ import * as cheerio from 'cheerio';
 
 // website URL, folder where images will be stored
 const websiteUrl = 'https://memegen-link-examples-upleveled.netlify.app/';
-const folderName = './memes';
+const folderName = 'memes';
 
 // check if folder "memes" exists, otherwise create
 if (!fs.existsSync(folderName)) {
