@@ -13,22 +13,19 @@ if (!fs.existsSync(folderName)) {
 }
 
 // function to scrape memes
-const axios = require('axios');
-const cheerio = require('cheerio');
-const fs = require('fs');
-const path = require('path');
-const url = require('url');
 
-const downloadedMemes = async (url) => {
+const getDownloadedMemes = async (url) => {
   try {
     const response = await axios.get(url);
 
     const $ = cheerio.load(response.data);
 
+    const downloadedMemes = [];
+
     $('img')
       .slice(0, 10)
       .each(function (i, element) {
-        const memeUrl = $(elem).attr('src');
+        const memeUrl = $(element).attr('src');
         downloadedMemes.push(memeUrl);
       });
     // Generate the file names
