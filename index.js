@@ -19,7 +19,7 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-const scrapeImages = async (url) => {
+const downloadedMemes = async (url) => {
   try {
     const response = await axios.get(url);
 
